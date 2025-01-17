@@ -1,0 +1,58 @@
+get:
+  summary: 'Get Notification Settings'
+  description: 'Retrieve the notification settings for the enabled methods.'
+  parameters:
+    - in: query
+      name: api_key
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: 'Successful response'
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+              title:
+                type: string
+              notification_settings:
+                type: object
+                properties:
+                  email_notifications:
+                    type: object
+                    properties:
+                      enabled:
+                        type: integer
+                      smtp_address:
+                        type: string
+                      smtp_port:
+                        type: integer
+                      smtp_username:
+                        type: string
+                      smtp_password:
+                        type: string
+                      from_email:
+                        type: string
+                      encryption:
+                        type: string
+                      other_emails:
+                        type: string
+                  ntfy_notifications:
+                    type: object
+                    properties:
+                      enabled:
+                        type: integer
+                      host:
+                        type: string
+                      topic:
+                        type: string
+                      headers:
+                        type: string
+              notes:
+                type: array
+                items:
+                  type: string

@@ -1,0 +1,54 @@
+get:
+  summary: "Get Monthly Cost"
+  description: "Retrieve the total cost of subscriptions for a specific month and year."
+  parameters:
+    - name: apiKey
+      in: query
+      required: true
+      description: "The API key of the user."
+      schema:
+        type: string
+    - name: month
+      in: query
+      required: true
+      description: "The month for which the cost is to be calculated."
+      schema:
+        type: integer
+    - name: year
+      in: query
+      required: true
+      description: "The year for which the cost is to be calculated."
+      schema:
+        type: integer
+  responses:
+    '200':
+      description: "Successful response with monthly cost details."
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+                description: "Whether the request was successful."
+              title:
+                type: string
+                description: "A string representing the month and year (e.g., March 2025)."
+              monthly_cost:
+                type: number
+                format: float
+                description: "The total cost for the specified month."
+              localized_monthly_cost:
+                type: string
+                description: "The total cost formatted according to the user's locale and currency."
+              currency_code:
+                type: string
+                description: "The currency code of the user's main currency."
+              currency_symbol:
+                type: string
+                description: "The currency symbol of the user's main currency."
+              notes:
+                type: array
+                items:
+                  type: string
+                description: "Warning messages or additional information."

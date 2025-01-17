@@ -1,0 +1,99 @@
+get:
+  summary: 'Get Currencies'
+  description: 'Retrieve a list of currencies and the main currency of the user.'
+  parameters:
+    - in: query
+      name: apiKey
+      required: true
+      schema:
+        type: string
+      description: 'API key of the user.'
+  responses:
+    '200':
+      description: 'Successful response'
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+                description: 'Indicates whether the request was successful.'
+              title:
+                type: string
+                description: 'The title of the response.'
+              main_currency:
+                type: integer
+                description: 'The ID of the main currency of the user.'
+              currencies:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      description: 'The unique identifier for the currency.'
+                    name:
+                      type: string
+                      description: 'The name of the currency.'
+                    symbol:
+                      type: string
+                      description: 'The symbol of the currency.'
+                    code:
+                      type: string
+                      description: 'The ISO code of the currency.'
+                    rate:
+                      type: string
+                      description: 'The current exchange rate of the currency.'
+                    in_use:
+                      type: boolean
+                      description: 'Indicates if the currency is currently in use.'
+              notes:
+                type: array
+                items:
+                  type: string
+                description: 'Warning messages or additional information.'
+      examples:
+        application/json:
+          value:
+            success: true
+            title: "currencies"
+            main_currency: 3
+            currencies:
+              - id: 1
+                name: "US Dollar"
+                symbol: "$"
+                code: "USD"
+                rate: "1.1000"
+                in_use: true
+              - id: 2
+                name: "Japanese Yen"
+                symbol: "¥"
+                code: "JPY"
+                rate: "150.0000"
+                in_use: true
+              - id: 3
+                name: "Euro"
+                symbol: "€"
+                code: "EUR"
+                rate: "1.0000"
+                in_use: true
+            notes: []
+    '401':
+      description: 'Unauthorized - Invalid API Key'
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+                example: false
+              title:
+                type: string
+                example: "Unauthorized"
+              notes:
+                type: array
+                items:
+                  type: string
+                example: ["Invalid API Key"]

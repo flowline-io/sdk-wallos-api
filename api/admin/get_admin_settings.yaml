@@ -1,0 +1,111 @@
+get:
+  summary: 'Get Admin Settings'
+  description: 'Retrieve admin settings from the Wallos application.'
+  parameters:
+    - in: query
+      name: apiKey
+      required: true
+      schema:
+        type: string
+      description: 'API key of the user.'
+  responses:
+    '200':
+      description: 'Successful response'
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+                description: 'Indicates whether the request was successful.'
+              title:
+                type: string
+                description: 'The title of the response.'
+              admin_settings:
+                type: object
+                properties:
+                  registrations_open:
+                    type: integer
+                    description: 'Indicates if registrations are open (1 for true, 0 for false).'
+                  max_users:
+                    type: integer
+                    description: 'The maximum number of users allowed.'
+                  require_email_verification:
+                    type: integer
+                    description: 'Indicates if email verification is required (1 for true, 0 for false).'
+                  server_url:
+                    type: string
+                    format: uri
+                    description: 'The server URL.'
+                  smtp_address:
+                    type: string
+                    description: 'The SMTP address for sending emails.'
+                  smtp_port:
+                    type: integer
+                    description: 'The port for the SMTP server.'
+                  smtp_username:
+                    type: string
+                    description: 'The username for SMTP authentication.'
+                  smtp_password:
+                    type: string
+                    description: 'The password for SMTP authentication.'
+                  from_email:
+                    type: string
+                    format: email
+                    description: 'The email address used as the sender.'
+                  encryption:
+                    type: string
+                    description: 'The encryption method for SMTP (e.g., tls, ssl).'
+                  login_disabled:
+                    type: integer
+                    description: 'Indicates if login is disabled (1 for true, 0 for false).'
+                  latest_version:
+                    type: string
+                    description: 'The latest version of the application.'
+                  update_notification:
+                    type: integer
+                    description: 'Indicates if update notifications are enabled (1 for true, 0 for false).'
+              notes:
+                type: array
+                items:
+                  type: string
+                description: 'Warning messages or additional information.'
+      examples:
+        application/json:
+          value:
+            success: true
+            title: "admin_settings"
+            admin_settings:
+              registrations_open: 1
+              max_users: 100
+              require_email_verification: 1
+              server_url: "http://example.com"
+              smtp_address: "smtp.example.com"
+              smtp_port: 587
+              smtp_username: "admin@example.com"
+              smtp_password: "********"
+              from_email: "no-reply@example.com"
+              encryption: "tls"
+              login_disabled: 0
+              latest_version: "v1.0.0"
+              update_notification: 1
+            notes: []
+    '401':
+      description: 'Unauthorized - Invalid API Key'
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+                example: false
+              title:
+                type: string
+                example: "Unauthorized"
+              notes:
+                type: array
+                items:
+                  type: string
+                example: ["Invalid API Key"]

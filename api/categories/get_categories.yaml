@@ -1,0 +1,83 @@
+get:
+  summary: 'Get Categories'
+  description: 'Retrieve a list of categories from the Wallos application.'
+  parameters:
+    - in: query
+      name: apiKey
+      required: true
+      schema:
+        type: string
+      description: 'API key of the user.'
+  responses:
+    '200':
+      description: 'Successful response'
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+                description: 'Indicates whether the request was successful.'
+              title:
+                type: string
+                description: 'The title of the response.'
+              categories:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      description: 'The unique identifier for the category.'
+                    name:
+                      type: string
+                      description: 'The name of the category.'
+                    order:
+                      type: integer
+                      description: 'The display order of the category.'
+                    in_use:
+                      type: boolean
+                      description: 'Indicates if the category is currently in use.'
+              notes:
+                type: array
+                items:
+                  type: string
+                description: 'Warning messages or additional information.'
+      examples:
+        application/json:
+          value:
+            success: true
+            title: "categories"
+            categories:
+              - id: 1
+                name: "General"
+                order: 1
+                in_use: true
+              - id: 2
+                name: "Entertainment"
+                order: 2
+                in_use: true
+              - id: 3
+                name: "Music"
+                order: 3
+                in_use: true
+            notes: []
+    '401':
+      description: 'Unauthorized - Invalid API Key'
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+                example: false
+              title:
+                type: string
+                example: "Unauthorized"
+              notes:
+                type: array
+                items:
+                  type: string
+                example: ["Invalid API Key"]

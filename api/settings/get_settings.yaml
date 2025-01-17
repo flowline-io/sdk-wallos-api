@@ -1,0 +1,51 @@
+get:
+  summary: 'Get User Settings'
+  description: 'Retrieve the user settings.'
+  parameters:
+    - in: query
+      name: api_key
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: 'Successful response'
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+              title:
+                type: string
+              settings:
+                type: object
+                properties:
+                  dark_theme:
+                    type: integer
+                  monthly_price:
+                    type: integer
+                  convert_currency:
+                    type: integer
+                  remove_background:
+                    type: integer
+                  color_theme:
+                    type: string
+                  hide_disabled:
+                    type: integer
+                  disabled_to_bottom:
+                    type: integer
+                  show_original_price:
+                    type: integer
+                  mobile_nav:
+                    type: integer
+                  custom_css:
+                    type: object
+                    properties:
+                      css:
+                        type: string
+              notes:
+                type: array
+                items:
+                  type: string

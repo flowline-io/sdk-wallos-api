@@ -1,0 +1,122 @@
+get:
+  summary: "Get Subscriptions"
+  description: "Retrieve a list of subscriptions with optional filters."
+  parameters:
+    - name: apiKey
+      in: query
+      required: true
+      description: "The API key of the user."
+      schema:
+        type: string
+    - name: member
+      in: query
+      required: false
+      description: "Comma-separated IDs of the members to filter."
+      schema:
+        type: string
+    - name: category
+      in: query
+      required: false
+      description: "The ID of the category to filter."
+      schema:
+        type: integer
+    - name: payment_method
+      in: query
+      required: false
+      description: "The ID of the payment method to filter."
+      schema:
+        type: integer
+    - name: state
+      in: query
+      required: false
+      description: "The state of the subscription to filter [0 - active, 1 - inactive]."
+      schema:
+        type: boolean
+    - name: disabled_to_bottom
+      in: query
+      required: false
+      description: "Whether to sort inactive subscriptions to the bottom."
+      schema:
+        type: boolean
+    - name: sort
+      in: query
+      required: false
+      description: "The sorting method ['name', 'id', 'next_payment', 'price', etc.]."
+      schema:
+        type: string
+        enum: ['name', 'id', 'next_payment', 'price', 'payer_user_id', 'category_id', 'payment_method_id', 'inactive', 'alphanumeric']
+      default: 'next_payment'
+    - name: convert_currency
+      in: query
+      required: false
+      description: "Whether to convert the prices to the main currency."
+      schema:
+        type: boolean
+      default: false
+  responses:
+    '200':
+      description: "Successful response with subscription details."
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+                description: "Whether the request was successful."
+              title:
+                type: string
+                description: "The title of the response, typically 'subscriptions'."
+              subscriptions:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                    logo:
+                      type: string
+                    price:
+                      type: number
+                      format: float
+                    currency_id:
+                      type: integer
+                    next_payment:
+                      type: string
+                      format: date
+                    cycle:
+                      type: integer
+                    frequency:
+                      type: integer
+                    notes:
+                      type: string
+                    payment_method_id:
+                      type: integer
+                    payer_user_id:
+                      type: integer
+                    category_id:
+                      type: integer
+                    notify:
+                      type: boolean
+                    url:
+                      type: string
+                    inactive:
+                      type: boolean
+                    notify_days_before:
+                      type: integer
+                    cancelation_date:
+                      type: string
+                      format: date
+                    category_name:
+                      type: string
+                    payer_user_name:
+                      type: string
+                    payment_method_name:
+                      type: string
+              notes:
+                type: array
+                items:
+                  type: string
+                description: "Warning messages or additional information."

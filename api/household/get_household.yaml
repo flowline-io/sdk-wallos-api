@@ -1,0 +1,38 @@
+get:
+  summary: 'Get Household'
+  description: 'Retrieve the household members.'
+  parameters:
+    - in: query
+      name: apiKey
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: 'Successful response'
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+              title:
+                type: string
+              household:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                    email:
+                      type: string
+                    in_use:
+                      type: boolean
+              notes:
+                type: array
+                items:
+                  type: string

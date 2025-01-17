@@ -1,0 +1,8 @@
+# https://taskfile.dev
+
+version: '3'
+
+tasks:
+  default:
+    cmds:
+      - sudo docker run --rm -v ${PWD}:/local docker.1ms.run/openapitools/openapi-generator-cli generate -i /local/openapi.yaml -g go -o /local

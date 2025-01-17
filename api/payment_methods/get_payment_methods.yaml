@@ -1,0 +1,42 @@
+get:
+  summary: 'Get Payment Methods'
+  description: 'Retrieve the available payment methods.'
+  parameters:
+    - in: query
+      name: api_key
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: 'Successful response'
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+              title:
+                type: string
+              payment_methods:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                    icon:
+                      type: string
+                    enabled:
+                      type: integer
+                    order:
+                      type: integer
+                    in_use:
+                      type: boolean
+              notes:
+                type: array
+                items:
+                  type: string

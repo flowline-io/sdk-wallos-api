@@ -1,0 +1,69 @@
+get:
+  summary: 'Get Fixer Settings'
+  description: 'Retrieve the Fixer settings for the user.'
+  parameters:
+    - in: query
+      name: api_key
+      required: true
+      schema:
+        type: string
+      description: 'API key of the user.'
+  responses:
+    '200':
+      description: 'Successful response'
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+                description: 'Indicates whether the request was successful.'
+              title:
+                type: string
+                description: 'The title of the response.'
+              fixer:
+                type: object
+                properties:
+                  api_key:
+                    type: string
+                    description: 'The API key used for accessing Fixer.'
+                  provider:
+                    type: integer
+                    description: 'The ID of the provider.'
+                  provider_name:
+                    type: string
+                    description: 'The name of the provider.'
+              notes:
+                type: array
+                items:
+                  type: string
+                description: 'Warning messages or additional information.'
+      examples:
+        application/json:
+          value:
+            success: true
+            title: "fixer"
+            fixer:
+              api_key: "********"
+              provider: 0
+              provider_name: "Fixer.io"
+            notes: []
+    '401':
+      description: 'Unauthorized - Invalid API Key'
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+                example: false
+              title:
+                type: string
+                example: "Unauthorized"
+              notes:
+                type: array
+                items:
+                  type: string
+                example: ["Invalid API Key"]

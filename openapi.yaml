@@ -1,0 +1,29 @@
+openapi: '3.0.3'
+info:
+  version: '1.0.0'
+  title: 'Wallos API'
+  description: 'API documentation for Wallos'
+  x-logo:
+    url: 'https://wallosapp.com/images/logo/wallosapi.png'
+    altText: 'Wallos API Logo'
+paths:
+  /api/admin/get_admin_settings.php:
+    $ref: './api/admin/get_admin_settings.yaml'
+  /api/categories/get_categories.php:
+    $ref: './api/categories/get_categories.yaml'
+  /api/currencies/get_currencies.php:
+    $ref: './api/currencies/get_currencies.yaml'
+  /api/fixer/get_fixer.php:
+    $ref: './api/fixer/get_fixer.yaml'
+  /api/household/get_household.php:
+    $ref: './api/household/get_household.yaml'
+  /api/notifications/get_notification_settings.php:
+    $ref: './api/notifications/get_notification_settings.yaml'
+  /api/payment_methods/get_payment_methods.php:
+    $ref: './api/payment_methods/get_payment_methods.yaml'
+  /api/settings/get_settings.php:
+    $ref: './api/settings/get_settings.yaml'
+  /api/subscriptions/get_monthly_cost.php:
+    $ref: './api/subscriptions/get_monthly_cost.yaml'
+  /api/subscriptions/get_subscriptions.php:
+    $ref: './api/subscriptions/get_subscriptions.yaml'
