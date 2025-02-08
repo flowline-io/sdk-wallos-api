@@ -18,14 +18,13 @@ import (
 	"net/url"
 )
 
-
 // DefaultAPIService DefaultAPI service
 type DefaultAPIService service
 
 type ApiApiAdminGetAdminSettingsPhpGetRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DefaultAPIService
-	apiKey *string
+	apiKey     *string
 }
 
 // API key of the user.
@@ -43,24 +42,25 @@ ApiAdminGetAdminSettingsPhpGet Get Admin Settings
 
 Retrieve admin settings from the Wallos application.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiApiAdminGetAdminSettingsPhpGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiApiAdminGetAdminSettingsPhpGetRequest
 */
 func (a *DefaultAPIService) ApiAdminGetAdminSettingsPhpGet(ctx context.Context) ApiApiAdminGetAdminSettingsPhpGetRequest {
 	return ApiApiAdminGetAdminSettingsPhpGetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ApiAdminGetAdminSettingsPhpGet200Response
+//
+//	@return ApiAdminGetAdminSettingsPhpGet200Response
 func (a *DefaultAPIService) ApiAdminGetAdminSettingsPhpGetExecute(r ApiApiAdminGetAdminSettingsPhpGetRequest) (*ApiAdminGetAdminSettingsPhpGet200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ApiAdminGetAdminSettingsPhpGet200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ApiAdminGetAdminSettingsPhpGet200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.ApiAdminGetAdminSettingsPhpGet")
@@ -77,7 +77,7 @@ func (a *DefaultAPIService) ApiAdminGetAdminSettingsPhpGetExecute(r ApiApiAdminG
 		return localVarReturnValue, nil, reportError("apiKey is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "apiKey", r.apiKey, "", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "api_key", r.apiKey, "", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -124,8 +124,8 @@ func (a *DefaultAPIService) ApiAdminGetAdminSettingsPhpGetExecute(r ApiApiAdminG
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -143,9 +143,9 @@ func (a *DefaultAPIService) ApiAdminGetAdminSettingsPhpGetExecute(r ApiApiAdminG
 }
 
 type ApiApiCategoriesGetCategoriesPhpGetRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DefaultAPIService
-	apiKey *string
+	apiKey     *string
 }
 
 // API key of the user.
@@ -163,24 +163,25 @@ ApiCategoriesGetCategoriesPhpGet Get Categories
 
 Retrieve a list of categories from the Wallos application.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiApiCategoriesGetCategoriesPhpGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiApiCategoriesGetCategoriesPhpGetRequest
 */
 func (a *DefaultAPIService) ApiCategoriesGetCategoriesPhpGet(ctx context.Context) ApiApiCategoriesGetCategoriesPhpGetRequest {
 	return ApiApiCategoriesGetCategoriesPhpGetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ApiCategoriesGetCategoriesPhpGet200Response
+//
+//	@return ApiCategoriesGetCategoriesPhpGet200Response
 func (a *DefaultAPIService) ApiCategoriesGetCategoriesPhpGetExecute(r ApiApiCategoriesGetCategoriesPhpGetRequest) (*ApiCategoriesGetCategoriesPhpGet200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ApiCategoriesGetCategoriesPhpGet200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ApiCategoriesGetCategoriesPhpGet200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.ApiCategoriesGetCategoriesPhpGet")
@@ -197,7 +198,7 @@ func (a *DefaultAPIService) ApiCategoriesGetCategoriesPhpGetExecute(r ApiApiCate
 		return localVarReturnValue, nil, reportError("apiKey is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "apiKey", r.apiKey, "", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "api_key", r.apiKey, "", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -244,8 +245,8 @@ func (a *DefaultAPIService) ApiCategoriesGetCategoriesPhpGetExecute(r ApiApiCate
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -263,9 +264,9 @@ func (a *DefaultAPIService) ApiCategoriesGetCategoriesPhpGetExecute(r ApiApiCate
 }
 
 type ApiApiCurrenciesGetCurrenciesPhpGetRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DefaultAPIService
-	apiKey *string
+	apiKey     *string
 }
 
 // API key of the user.
@@ -283,24 +284,25 @@ ApiCurrenciesGetCurrenciesPhpGet Get Currencies
 
 Retrieve a list of currencies and the main currency of the user.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiApiCurrenciesGetCurrenciesPhpGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiApiCurrenciesGetCurrenciesPhpGetRequest
 */
 func (a *DefaultAPIService) ApiCurrenciesGetCurrenciesPhpGet(ctx context.Context) ApiApiCurrenciesGetCurrenciesPhpGetRequest {
 	return ApiApiCurrenciesGetCurrenciesPhpGetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ApiCurrenciesGetCurrenciesPhpGet200Response
+//
+//	@return ApiCurrenciesGetCurrenciesPhpGet200Response
 func (a *DefaultAPIService) ApiCurrenciesGetCurrenciesPhpGetExecute(r ApiApiCurrenciesGetCurrenciesPhpGetRequest) (*ApiCurrenciesGetCurrenciesPhpGet200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ApiCurrenciesGetCurrenciesPhpGet200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ApiCurrenciesGetCurrenciesPhpGet200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.ApiCurrenciesGetCurrenciesPhpGet")
@@ -317,7 +319,7 @@ func (a *DefaultAPIService) ApiCurrenciesGetCurrenciesPhpGetExecute(r ApiApiCurr
 		return localVarReturnValue, nil, reportError("apiKey is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "apiKey", r.apiKey, "", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "api_key", r.apiKey, "", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -364,8 +366,8 @@ func (a *DefaultAPIService) ApiCurrenciesGetCurrenciesPhpGetExecute(r ApiApiCurr
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -383,9 +385,9 @@ func (a *DefaultAPIService) ApiCurrenciesGetCurrenciesPhpGetExecute(r ApiApiCurr
 }
 
 type ApiApiFixerGetFixerPhpGetRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DefaultAPIService
-	apiKey *string
+	apiKey     *string
 }
 
 // API key of the user.
@@ -403,24 +405,25 @@ ApiFixerGetFixerPhpGet Get Fixer Settings
 
 Retrieve the Fixer settings for the user.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiApiFixerGetFixerPhpGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiApiFixerGetFixerPhpGetRequest
 */
 func (a *DefaultAPIService) ApiFixerGetFixerPhpGet(ctx context.Context) ApiApiFixerGetFixerPhpGetRequest {
 	return ApiApiFixerGetFixerPhpGetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ApiFixerGetFixerPhpGet200Response
+//
+//	@return ApiFixerGetFixerPhpGet200Response
 func (a *DefaultAPIService) ApiFixerGetFixerPhpGetExecute(r ApiApiFixerGetFixerPhpGetRequest) (*ApiFixerGetFixerPhpGet200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ApiFixerGetFixerPhpGet200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ApiFixerGetFixerPhpGet200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.ApiFixerGetFixerPhpGet")
@@ -484,8 +487,8 @@ func (a *DefaultAPIService) ApiFixerGetFixerPhpGetExecute(r ApiApiFixerGetFixerP
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
+			newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -503,9 +506,9 @@ func (a *DefaultAPIService) ApiFixerGetFixerPhpGetExecute(r ApiApiFixerGetFixerP
 }
 
 type ApiApiHouseholdGetHouseholdPhpGetRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DefaultAPIService
-	apiKey *string
+	apiKey     *string
 }
 
 func (r ApiApiHouseholdGetHouseholdPhpGetRequest) ApiKey(apiKey string) ApiApiHouseholdGetHouseholdPhpGetRequest {
@@ -522,24 +525,25 @@ ApiHouseholdGetHouseholdPhpGet Get Household
 
 Retrieve the household members.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiApiHouseholdGetHouseholdPhpGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiApiHouseholdGetHouseholdPhpGetRequest
 */
 func (a *DefaultAPIService) ApiHouseholdGetHouseholdPhpGet(ctx context.Context) ApiApiHouseholdGetHouseholdPhpGetRequest {
 	return ApiApiHouseholdGetHouseholdPhpGetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ApiHouseholdGetHouseholdPhpGet200Response
+//
+//	@return ApiHouseholdGetHouseholdPhpGet200Response
 func (a *DefaultAPIService) ApiHouseholdGetHouseholdPhpGetExecute(r ApiApiHouseholdGetHouseholdPhpGetRequest) (*ApiHouseholdGetHouseholdPhpGet200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ApiHouseholdGetHouseholdPhpGet200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ApiHouseholdGetHouseholdPhpGet200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.ApiHouseholdGetHouseholdPhpGet")
@@ -556,7 +560,7 @@ func (a *DefaultAPIService) ApiHouseholdGetHouseholdPhpGetExecute(r ApiApiHouseh
 		return localVarReturnValue, nil, reportError("apiKey is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "apiKey", r.apiKey, "", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "api_key", r.apiKey, "", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -612,9 +616,9 @@ func (a *DefaultAPIService) ApiHouseholdGetHouseholdPhpGetExecute(r ApiApiHouseh
 }
 
 type ApiApiNotificationsGetNotificationSettingsPhpGetRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DefaultAPIService
-	apiKey *string
+	apiKey     *string
 }
 
 func (r ApiApiNotificationsGetNotificationSettingsPhpGetRequest) ApiKey(apiKey string) ApiApiNotificationsGetNotificationSettingsPhpGetRequest {
@@ -631,24 +635,25 @@ ApiNotificationsGetNotificationSettingsPhpGet Get Notification Settings
 
 Retrieve the notification settings for the enabled methods.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiApiNotificationsGetNotificationSettingsPhpGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiApiNotificationsGetNotificationSettingsPhpGetRequest
 */
 func (a *DefaultAPIService) ApiNotificationsGetNotificationSettingsPhpGet(ctx context.Context) ApiApiNotificationsGetNotificationSettingsPhpGetRequest {
 	return ApiApiNotificationsGetNotificationSettingsPhpGetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ApiNotificationsGetNotificationSettingsPhpGet200Response
+//
+//	@return ApiNotificationsGetNotificationSettingsPhpGet200Response
 func (a *DefaultAPIService) ApiNotificationsGetNotificationSettingsPhpGetExecute(r ApiApiNotificationsGetNotificationSettingsPhpGetRequest) (*ApiNotificationsGetNotificationSettingsPhpGet200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ApiNotificationsGetNotificationSettingsPhpGet200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ApiNotificationsGetNotificationSettingsPhpGet200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.ApiNotificationsGetNotificationSettingsPhpGet")
@@ -721,9 +726,9 @@ func (a *DefaultAPIService) ApiNotificationsGetNotificationSettingsPhpGetExecute
 }
 
 type ApiApiPaymentMethodsGetPaymentMethodsPhpGetRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DefaultAPIService
-	apiKey *string
+	apiKey     *string
 }
 
 func (r ApiApiPaymentMethodsGetPaymentMethodsPhpGetRequest) ApiKey(apiKey string) ApiApiPaymentMethodsGetPaymentMethodsPhpGetRequest {
@@ -740,24 +745,25 @@ ApiPaymentMethodsGetPaymentMethodsPhpGet Get Payment Methods
 
 Retrieve the available payment methods.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiApiPaymentMethodsGetPaymentMethodsPhpGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiApiPaymentMethodsGetPaymentMethodsPhpGetRequest
 */
 func (a *DefaultAPIService) ApiPaymentMethodsGetPaymentMethodsPhpGet(ctx context.Context) ApiApiPaymentMethodsGetPaymentMethodsPhpGetRequest {
 	return ApiApiPaymentMethodsGetPaymentMethodsPhpGetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ApiPaymentMethodsGetPaymentMethodsPhpGet200Response
+//
+//	@return ApiPaymentMethodsGetPaymentMethodsPhpGet200Response
 func (a *DefaultAPIService) ApiPaymentMethodsGetPaymentMethodsPhpGetExecute(r ApiApiPaymentMethodsGetPaymentMethodsPhpGetRequest) (*ApiPaymentMethodsGetPaymentMethodsPhpGet200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ApiPaymentMethodsGetPaymentMethodsPhpGet200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ApiPaymentMethodsGetPaymentMethodsPhpGet200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.ApiPaymentMethodsGetPaymentMethodsPhpGet")
@@ -830,9 +836,9 @@ func (a *DefaultAPIService) ApiPaymentMethodsGetPaymentMethodsPhpGetExecute(r Ap
 }
 
 type ApiApiSettingsGetSettingsPhpGetRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DefaultAPIService
-	apiKey *string
+	apiKey     *string
 }
 
 func (r ApiApiSettingsGetSettingsPhpGetRequest) ApiKey(apiKey string) ApiApiSettingsGetSettingsPhpGetRequest {
@@ -849,24 +855,25 @@ ApiSettingsGetSettingsPhpGet Get User Settings
 
 Retrieve the user settings.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiApiSettingsGetSettingsPhpGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiApiSettingsGetSettingsPhpGetRequest
 */
 func (a *DefaultAPIService) ApiSettingsGetSettingsPhpGet(ctx context.Context) ApiApiSettingsGetSettingsPhpGetRequest {
 	return ApiApiSettingsGetSettingsPhpGetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ApiSettingsGetSettingsPhpGet200Response
+//
+//	@return ApiSettingsGetSettingsPhpGet200Response
 func (a *DefaultAPIService) ApiSettingsGetSettingsPhpGetExecute(r ApiApiSettingsGetSettingsPhpGetRequest) (*ApiSettingsGetSettingsPhpGet200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ApiSettingsGetSettingsPhpGet200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ApiSettingsGetSettingsPhpGet200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.ApiSettingsGetSettingsPhpGet")
@@ -939,11 +946,11 @@ func (a *DefaultAPIService) ApiSettingsGetSettingsPhpGetExecute(r ApiApiSettings
 }
 
 type ApiApiSubscriptionsGetMonthlyCostPhpGetRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DefaultAPIService
-	apiKey *string
-	month *int32
-	year *int32
+	apiKey     *string
+	month      *int32
+	year       *int32
 }
 
 // The API key of the user.
@@ -973,24 +980,25 @@ ApiSubscriptionsGetMonthlyCostPhpGet Get Monthly Cost
 
 Retrieve the total cost of subscriptions for a specific month and year.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiApiSubscriptionsGetMonthlyCostPhpGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiApiSubscriptionsGetMonthlyCostPhpGetRequest
 */
 func (a *DefaultAPIService) ApiSubscriptionsGetMonthlyCostPhpGet(ctx context.Context) ApiApiSubscriptionsGetMonthlyCostPhpGetRequest {
 	return ApiApiSubscriptionsGetMonthlyCostPhpGetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ApiSubscriptionsGetMonthlyCostPhpGet200Response
+//
+//	@return ApiSubscriptionsGetMonthlyCostPhpGet200Response
 func (a *DefaultAPIService) ApiSubscriptionsGetMonthlyCostPhpGetExecute(r ApiApiSubscriptionsGetMonthlyCostPhpGetRequest) (*ApiSubscriptionsGetMonthlyCostPhpGet200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ApiSubscriptionsGetMonthlyCostPhpGet200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ApiSubscriptionsGetMonthlyCostPhpGet200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.ApiSubscriptionsGetMonthlyCostPhpGet")
@@ -1013,7 +1021,7 @@ func (a *DefaultAPIService) ApiSubscriptionsGetMonthlyCostPhpGetExecute(r ApiApi
 		return localVarReturnValue, nil, reportError("year is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "apiKey", r.apiKey, "", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "api_key", r.apiKey, "", "")
 	parameterAddToHeaderOrQuery(localVarQueryParams, "month", r.month, "", "")
 	parameterAddToHeaderOrQuery(localVarQueryParams, "year", r.year, "", "")
 	// to determine the Content-Type header
@@ -1071,16 +1079,16 @@ func (a *DefaultAPIService) ApiSubscriptionsGetMonthlyCostPhpGetExecute(r ApiApi
 }
 
 type ApiApiSubscriptionsGetSubscriptionsPhpGetRequest struct {
-	ctx context.Context
-	ApiService *DefaultAPIService
-	apiKey *string
-	member *string
-	category *int32
-	paymentMethod *int32
-	state *bool
+	ctx              context.Context
+	ApiService       *DefaultAPIService
+	apiKey           *string
+	member           *string
+	category         *int32
+	paymentMethod    *int32
+	state            *bool
 	disabledToBottom *bool
-	sort *string
-	convertCurrency *bool
+	sort             *string
+	convertCurrency  *bool
 }
 
 // The API key of the user.
@@ -1140,24 +1148,25 @@ ApiSubscriptionsGetSubscriptionsPhpGet Get Subscriptions
 
 Retrieve a list of subscriptions with optional filters.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiApiSubscriptionsGetSubscriptionsPhpGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiApiSubscriptionsGetSubscriptionsPhpGetRequest
 */
 func (a *DefaultAPIService) ApiSubscriptionsGetSubscriptionsPhpGet(ctx context.Context) ApiApiSubscriptionsGetSubscriptionsPhpGetRequest {
 	return ApiApiSubscriptionsGetSubscriptionsPhpGetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ApiSubscriptionsGetSubscriptionsPhpGet200Response
+//
+//	@return ApiSubscriptionsGetSubscriptionsPhpGet200Response
 func (a *DefaultAPIService) ApiSubscriptionsGetSubscriptionsPhpGetExecute(r ApiApiSubscriptionsGetSubscriptionsPhpGetRequest) (*ApiSubscriptionsGetSubscriptionsPhpGet200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ApiSubscriptionsGetSubscriptionsPhpGet200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ApiSubscriptionsGetSubscriptionsPhpGet200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.ApiSubscriptionsGetSubscriptionsPhpGet")
@@ -1174,7 +1183,7 @@ func (a *DefaultAPIService) ApiSubscriptionsGetSubscriptionsPhpGetExecute(r ApiA
 		return localVarReturnValue, nil, reportError("apiKey is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "apiKey", r.apiKey, "", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "api_key", r.apiKey, "", "")
 	if r.member != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "member", r.member, "", "")
 	}

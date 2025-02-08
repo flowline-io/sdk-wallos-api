@@ -24,8 +24,8 @@ type ApiCurrenciesGetCurrenciesPhpGet200Response struct {
 	// The title of the response.
 	Title *string `json:"title,omitempty"`
 	// The ID of the main currency of the user.
-	MainCurrency *int32 `json:"main_currency,omitempty"`
-	Currencies []ApiCurrenciesGetCurrenciesPhpGet200ResponseCurrenciesInner `json:"currencies,omitempty"`
+	MainCurrency *int32                                                       `json:"main_currency,omitempty"`
+	Currencies   []ApiCurrenciesGetCurrenciesPhpGet200ResponseCurrenciesInner `json:"currencies,omitempty"`
 	// Warning messages or additional information.
 	Notes []string `json:"notes,omitempty"`
 }
@@ -208,7 +208,7 @@ func (o *ApiCurrenciesGetCurrenciesPhpGet200Response) SetNotes(v []string) {
 }
 
 func (o ApiCurrenciesGetCurrenciesPhpGet200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -270,5 +270,3 @@ func (v *NullableApiCurrenciesGetCurrenciesPhpGet200Response) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

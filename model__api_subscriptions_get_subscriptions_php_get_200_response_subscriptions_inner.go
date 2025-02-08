@@ -19,26 +19,26 @@ var _ MappedNullable = &ApiSubscriptionsGetSubscriptionsPhpGet200ResponseSubscri
 
 // ApiSubscriptionsGetSubscriptionsPhpGet200ResponseSubscriptionsInner struct for ApiSubscriptionsGetSubscriptionsPhpGet200ResponseSubscriptionsInner
 type ApiSubscriptionsGetSubscriptionsPhpGet200ResponseSubscriptionsInner struct {
-	Id *int32 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Logo *string `json:"logo,omitempty"`
-	Price *float32 `json:"price,omitempty"`
-	CurrencyId *int32 `json:"currency_id,omitempty"`
-	NextPayment *string `json:"next_payment,omitempty"`
-	Cycle *int32 `json:"cycle,omitempty"`
-	Frequency *int32 `json:"frequency,omitempty"`
-	Notes *string `json:"notes,omitempty"`
-	PaymentMethodId *int32 `json:"payment_method_id,omitempty"`
-	PayerUserId *int32 `json:"payer_user_id,omitempty"`
-	CategoryId *int32 `json:"category_id,omitempty"`
-	Notify *bool `json:"notify,omitempty"`
-	Url *string `json:"url,omitempty"`
-	Inactive *bool `json:"inactive,omitempty"`
-	NotifyDaysBefore *int32 `json:"notify_days_before,omitempty"`
-	CancelationDate *string `json:"cancelation_date,omitempty"`
-	CategoryName *string `json:"category_name,omitempty"`
-	PayerUserName *string `json:"payer_user_name,omitempty"`
-	PaymentMethodName *string `json:"payment_method_name,omitempty"`
+	Id                *int32   `json:"id,omitempty"`
+	Name              *string  `json:"name,omitempty"`
+	Logo              *string  `json:"logo,omitempty"`
+	Price             *float32 `json:"price,omitempty"`
+	CurrencyId        *int32   `json:"currency_id,omitempty"`
+	NextPayment       *string  `json:"next_payment,omitempty"`
+	Cycle             *int32   `json:"cycle,omitempty"`
+	Frequency         *int32   `json:"frequency,omitempty"`
+	Notes             *string  `json:"notes,omitempty"`
+	PaymentMethodId   *int32   `json:"payment_method_id,omitempty"`
+	PayerUserId       *int32   `json:"payer_user_id,omitempty"`
+	CategoryId        *int32   `json:"category_id,omitempty"`
+	Notify            *bool    `json:"notify,omitempty"`
+	Url               *string  `json:"url,omitempty"`
+	Inactive          *bool    `json:"inactive,omitempty"`
+	NotifyDaysBefore  *int32   `json:"notify_days_before,omitempty"`
+	CancelationDate   *string  `json:"cancelation_date,omitempty"`
+	CategoryName      *string  `json:"category_name,omitempty"`
+	PayerUserName     *string  `json:"payer_user_name,omitempty"`
+	PaymentMethodName *string  `json:"payment_method_name,omitempty"`
 }
 
 // NewApiSubscriptionsGetSubscriptionsPhpGet200ResponseSubscriptionsInner instantiates a new ApiSubscriptionsGetSubscriptionsPhpGet200ResponseSubscriptionsInner object
@@ -699,7 +699,7 @@ func (o *ApiSubscriptionsGetSubscriptionsPhpGet200ResponseSubscriptionsInner) Se
 }
 
 func (o ApiSubscriptionsGetSubscriptionsPhpGet200ResponseSubscriptionsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -806,5 +806,3 @@ func (v *NullableApiSubscriptionsGetSubscriptionsPhpGet200ResponseSubscriptionsI
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

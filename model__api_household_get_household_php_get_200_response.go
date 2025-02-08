@@ -19,10 +19,10 @@ var _ MappedNullable = &ApiHouseholdGetHouseholdPhpGet200Response{}
 
 // ApiHouseholdGetHouseholdPhpGet200Response struct for ApiHouseholdGetHouseholdPhpGet200Response
 type ApiHouseholdGetHouseholdPhpGet200Response struct {
-	Success *bool `json:"success,omitempty"`
-	Title *string `json:"title,omitempty"`
+	Success   *bool                                                     `json:"success,omitempty"`
+	Title     *string                                                   `json:"title,omitempty"`
 	Household []ApiHouseholdGetHouseholdPhpGet200ResponseHouseholdInner `json:"household,omitempty"`
-	Notes []string `json:"notes,omitempty"`
+	Notes     []string                                                  `json:"notes,omitempty"`
 }
 
 // NewApiHouseholdGetHouseholdPhpGet200Response instantiates a new ApiHouseholdGetHouseholdPhpGet200Response object
@@ -171,7 +171,7 @@ func (o *ApiHouseholdGetHouseholdPhpGet200Response) SetNotes(v []string) {
 }
 
 func (o ApiHouseholdGetHouseholdPhpGet200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -230,5 +230,3 @@ func (v *NullableApiHouseholdGetHouseholdPhpGet200Response) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

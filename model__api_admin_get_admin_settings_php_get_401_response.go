@@ -19,9 +19,9 @@ var _ MappedNullable = &ApiAdminGetAdminSettingsPhpGet401Response{}
 
 // ApiAdminGetAdminSettingsPhpGet401Response struct for ApiAdminGetAdminSettingsPhpGet401Response
 type ApiAdminGetAdminSettingsPhpGet401Response struct {
-	Success *bool `json:"success,omitempty"`
-	Title *string `json:"title,omitempty"`
-	Notes []string `json:"notes,omitempty"`
+	Success *bool    `json:"success,omitempty"`
+	Title   *string  `json:"title,omitempty"`
+	Notes   []string `json:"notes,omitempty"`
 }
 
 // NewApiAdminGetAdminSettingsPhpGet401Response instantiates a new ApiAdminGetAdminSettingsPhpGet401Response object
@@ -138,7 +138,7 @@ func (o *ApiAdminGetAdminSettingsPhpGet401Response) SetNotes(v []string) {
 }
 
 func (o ApiAdminGetAdminSettingsPhpGet401Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -194,5 +194,3 @@ func (v *NullableApiAdminGetAdminSettingsPhpGet401Response) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,12 +19,12 @@ var _ MappedNullable = &ApiPaymentMethodsGetPaymentMethodsPhpGet200ResponsePayme
 
 // ApiPaymentMethodsGetPaymentMethodsPhpGet200ResponsePaymentMethodsInner struct for ApiPaymentMethodsGetPaymentMethodsPhpGet200ResponsePaymentMethodsInner
 type ApiPaymentMethodsGetPaymentMethodsPhpGet200ResponsePaymentMethodsInner struct {
-	Id *int32 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Icon *string `json:"icon,omitempty"`
-	Enabled *int32 `json:"enabled,omitempty"`
-	Order *int32 `json:"order,omitempty"`
-	InUse *bool `json:"in_use,omitempty"`
+	Id      *int32  `json:"id,omitempty"`
+	Name    *string `json:"name,omitempty"`
+	Icon    *string `json:"icon,omitempty"`
+	Enabled *int32  `json:"enabled,omitempty"`
+	Order   *int32  `json:"order,omitempty"`
+	InUse   *bool   `json:"in_use,omitempty"`
 }
 
 // NewApiPaymentMethodsGetPaymentMethodsPhpGet200ResponsePaymentMethodsInner instantiates a new ApiPaymentMethodsGetPaymentMethodsPhpGet200ResponsePaymentMethodsInner object
@@ -237,7 +237,7 @@ func (o *ApiPaymentMethodsGetPaymentMethodsPhpGet200ResponsePaymentMethodsInner)
 }
 
 func (o ApiPaymentMethodsGetPaymentMethodsPhpGet200ResponsePaymentMethodsInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -302,5 +302,3 @@ func (v *NullableApiPaymentMethodsGetPaymentMethodsPhpGet200ResponsePaymentMetho
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

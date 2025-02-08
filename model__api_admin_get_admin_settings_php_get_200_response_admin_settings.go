@@ -481,7 +481,7 @@ func (o *ApiAdminGetAdminSettingsPhpGet200ResponseAdminSettings) SetUpdateNotifi
 }
 
 func (o ApiAdminGetAdminSettingsPhpGet200ResponseAdminSettings) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -567,5 +567,3 @@ func (v *NullableApiAdminGetAdminSettingsPhpGet200ResponseAdminSettings) Unmarsh
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

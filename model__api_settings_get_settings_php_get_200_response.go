@@ -19,10 +19,10 @@ var _ MappedNullable = &ApiSettingsGetSettingsPhpGet200Response{}
 
 // ApiSettingsGetSettingsPhpGet200Response struct for ApiSettingsGetSettingsPhpGet200Response
 type ApiSettingsGetSettingsPhpGet200Response struct {
-	Success *bool `json:"success,omitempty"`
-	Title *string `json:"title,omitempty"`
+	Success  *bool                                            `json:"success,omitempty"`
+	Title    *string                                          `json:"title,omitempty"`
 	Settings *ApiSettingsGetSettingsPhpGet200ResponseSettings `json:"settings,omitempty"`
-	Notes []string `json:"notes,omitempty"`
+	Notes    []string                                         `json:"notes,omitempty"`
 }
 
 // NewApiSettingsGetSettingsPhpGet200Response instantiates a new ApiSettingsGetSettingsPhpGet200Response object
@@ -171,7 +171,7 @@ func (o *ApiSettingsGetSettingsPhpGet200Response) SetNotes(v []string) {
 }
 
 func (o ApiSettingsGetSettingsPhpGet200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -230,5 +230,3 @@ func (v *NullableApiSettingsGetSettingsPhpGet200Response) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

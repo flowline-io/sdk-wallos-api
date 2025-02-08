@@ -22,7 +22,7 @@ type ApiCategoriesGetCategoriesPhpGet200Response struct {
 	// Indicates whether the request was successful.
 	Success *bool `json:"success,omitempty"`
 	// The title of the response.
-	Title *string `json:"title,omitempty"`
+	Title      *string                                                      `json:"title,omitempty"`
 	Categories []ApiCategoriesGetCategoriesPhpGet200ResponseCategoriesInner `json:"categories,omitempty"`
 	// Warning messages or additional information.
 	Notes []string `json:"notes,omitempty"`
@@ -174,7 +174,7 @@ func (o *ApiCategoriesGetCategoriesPhpGet200Response) SetNotes(v []string) {
 }
 
 func (o ApiCategoriesGetCategoriesPhpGet200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -233,5 +233,3 @@ func (v *NullableApiCategoriesGetCategoriesPhpGet200Response) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

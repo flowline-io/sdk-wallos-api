@@ -19,9 +19,9 @@ var _ MappedNullable = &ApiNotificationsGetNotificationSettingsPhpGet200Response
 
 // ApiNotificationsGetNotificationSettingsPhpGet200ResponseNotificationSettingsNtfyNotifications struct for ApiNotificationsGetNotificationSettingsPhpGet200ResponseNotificationSettingsNtfyNotifications
 type ApiNotificationsGetNotificationSettingsPhpGet200ResponseNotificationSettingsNtfyNotifications struct {
-	Enabled *int32 `json:"enabled,omitempty"`
-	Host *string `json:"host,omitempty"`
-	Topic *string `json:"topic,omitempty"`
+	Enabled *int32  `json:"enabled,omitempty"`
+	Host    *string `json:"host,omitempty"`
+	Topic   *string `json:"topic,omitempty"`
 	Headers *string `json:"headers,omitempty"`
 }
 
@@ -171,7 +171,7 @@ func (o *ApiNotificationsGetNotificationSettingsPhpGet200ResponseNotificationSet
 }
 
 func (o ApiNotificationsGetNotificationSettingsPhpGet200ResponseNotificationSettingsNtfyNotifications) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -230,5 +230,3 @@ func (v *NullableApiNotificationsGetNotificationSettingsPhpGet200ResponseNotific
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

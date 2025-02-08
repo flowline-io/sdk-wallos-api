@@ -19,10 +19,10 @@ var _ MappedNullable = &ApiPaymentMethodsGetPaymentMethodsPhpGet200Response{}
 
 // ApiPaymentMethodsGetPaymentMethodsPhpGet200Response struct for ApiPaymentMethodsGetPaymentMethodsPhpGet200Response
 type ApiPaymentMethodsGetPaymentMethodsPhpGet200Response struct {
-	Success *bool `json:"success,omitempty"`
-	Title *string `json:"title,omitempty"`
+	Success        *bool                                                                    `json:"success,omitempty"`
+	Title          *string                                                                  `json:"title,omitempty"`
 	PaymentMethods []ApiPaymentMethodsGetPaymentMethodsPhpGet200ResponsePaymentMethodsInner `json:"payment_methods,omitempty"`
-	Notes []string `json:"notes,omitempty"`
+	Notes          []string                                                                 `json:"notes,omitempty"`
 }
 
 // NewApiPaymentMethodsGetPaymentMethodsPhpGet200Response instantiates a new ApiPaymentMethodsGetPaymentMethodsPhpGet200Response object
@@ -171,7 +171,7 @@ func (o *ApiPaymentMethodsGetPaymentMethodsPhpGet200Response) SetNotes(v []strin
 }
 
 func (o ApiPaymentMethodsGetPaymentMethodsPhpGet200Response) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -230,5 +230,3 @@ func (v *NullableApiPaymentMethodsGetPaymentMethodsPhpGet200Response) UnmarshalJ
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

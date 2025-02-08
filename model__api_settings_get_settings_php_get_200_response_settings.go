@@ -19,16 +19,16 @@ var _ MappedNullable = &ApiSettingsGetSettingsPhpGet200ResponseSettings{}
 
 // ApiSettingsGetSettingsPhpGet200ResponseSettings struct for ApiSettingsGetSettingsPhpGet200ResponseSettings
 type ApiSettingsGetSettingsPhpGet200ResponseSettings struct {
-	DarkTheme *int32 `json:"dark_theme,omitempty"`
-	MonthlyPrice *int32 `json:"monthly_price,omitempty"`
-	ConvertCurrency *int32 `json:"convert_currency,omitempty"`
-	RemoveBackground *int32 `json:"remove_background,omitempty"`
-	ColorTheme *string `json:"color_theme,omitempty"`
-	HideDisabled *int32 `json:"hide_disabled,omitempty"`
-	DisabledToBottom *int32 `json:"disabled_to_bottom,omitempty"`
-	ShowOriginalPrice *int32 `json:"show_original_price,omitempty"`
-	MobileNav *int32 `json:"mobile_nav,omitempty"`
-	CustomCss *ApiSettingsGetSettingsPhpGet200ResponseSettingsCustomCss `json:"custom_css,omitempty"`
+	DarkTheme         *int32                                                    `json:"dark_theme,omitempty"`
+	MonthlyPrice      *int32                                                    `json:"monthly_price,omitempty"`
+	ConvertCurrency   *int32                                                    `json:"convert_currency,omitempty"`
+	RemoveBackground  *int32                                                    `json:"remove_background,omitempty"`
+	ColorTheme        *string                                                   `json:"color_theme,omitempty"`
+	HideDisabled      *int32                                                    `json:"hide_disabled,omitempty"`
+	DisabledToBottom  *int32                                                    `json:"disabled_to_bottom,omitempty"`
+	ShowOriginalPrice *int32                                                    `json:"show_original_price,omitempty"`
+	MobileNav         *int32                                                    `json:"mobile_nav,omitempty"`
+	CustomCss         *ApiSettingsGetSettingsPhpGet200ResponseSettingsCustomCss `json:"custom_css,omitempty"`
 }
 
 // NewApiSettingsGetSettingsPhpGet200ResponseSettings instantiates a new ApiSettingsGetSettingsPhpGet200ResponseSettings object
@@ -369,7 +369,7 @@ func (o *ApiSettingsGetSettingsPhpGet200ResponseSettings) SetCustomCss(v ApiSett
 }
 
 func (o ApiSettingsGetSettingsPhpGet200ResponseSettings) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -446,5 +446,3 @@ func (v *NullableApiSettingsGetSettingsPhpGet200ResponseSettings) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

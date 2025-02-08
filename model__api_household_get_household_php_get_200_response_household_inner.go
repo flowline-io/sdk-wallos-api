@@ -19,10 +19,10 @@ var _ MappedNullable = &ApiHouseholdGetHouseholdPhpGet200ResponseHouseholdInner{
 
 // ApiHouseholdGetHouseholdPhpGet200ResponseHouseholdInner struct for ApiHouseholdGetHouseholdPhpGet200ResponseHouseholdInner
 type ApiHouseholdGetHouseholdPhpGet200ResponseHouseholdInner struct {
-	Id *int32 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
+	Id    *int32  `json:"id,omitempty"`
+	Name  *string `json:"name,omitempty"`
 	Email *string `json:"email,omitempty"`
-	InUse *bool `json:"in_use,omitempty"`
+	InUse *bool   `json:"in_use,omitempty"`
 }
 
 // NewApiHouseholdGetHouseholdPhpGet200ResponseHouseholdInner instantiates a new ApiHouseholdGetHouseholdPhpGet200ResponseHouseholdInner object
@@ -171,7 +171,7 @@ func (o *ApiHouseholdGetHouseholdPhpGet200ResponseHouseholdInner) SetInUse(v boo
 }
 
 func (o ApiHouseholdGetHouseholdPhpGet200ResponseHouseholdInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -230,5 +230,3 @@ func (v *NullableApiHouseholdGetHouseholdPhpGet200ResponseHouseholdInner) Unmars
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,14 +19,14 @@ var _ MappedNullable = &ApiNotificationsGetNotificationSettingsPhpGet200Response
 
 // ApiNotificationsGetNotificationSettingsPhpGet200ResponseNotificationSettingsEmailNotifications struct for ApiNotificationsGetNotificationSettingsPhpGet200ResponseNotificationSettingsEmailNotifications
 type ApiNotificationsGetNotificationSettingsPhpGet200ResponseNotificationSettingsEmailNotifications struct {
-	Enabled *int32 `json:"enabled,omitempty"`
-	SmtpAddress *string `json:"smtp_address,omitempty"`
-	SmtpPort *int32 `json:"smtp_port,omitempty"`
+	Enabled      *int32  `json:"enabled,omitempty"`
+	SmtpAddress  *string `json:"smtp_address,omitempty"`
+	SmtpPort     *int32  `json:"smtp_port,omitempty"`
 	SmtpUsername *string `json:"smtp_username,omitempty"`
 	SmtpPassword *string `json:"smtp_password,omitempty"`
-	FromEmail *string `json:"from_email,omitempty"`
-	Encryption *string `json:"encryption,omitempty"`
-	OtherEmails *string `json:"other_emails,omitempty"`
+	FromEmail    *string `json:"from_email,omitempty"`
+	Encryption   *string `json:"encryption,omitempty"`
+	OtherEmails  *string `json:"other_emails,omitempty"`
 }
 
 // NewApiNotificationsGetNotificationSettingsPhpGet200ResponseNotificationSettingsEmailNotifications instantiates a new ApiNotificationsGetNotificationSettingsPhpGet200ResponseNotificationSettingsEmailNotifications object
@@ -303,7 +303,7 @@ func (o *ApiNotificationsGetNotificationSettingsPhpGet200ResponseNotificationSet
 }
 
 func (o ApiNotificationsGetNotificationSettingsPhpGet200ResponseNotificationSettingsEmailNotifications) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -374,5 +374,3 @@ func (v *NullableApiNotificationsGetNotificationSettingsPhpGet200ResponseNotific
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

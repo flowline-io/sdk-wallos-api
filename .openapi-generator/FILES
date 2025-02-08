@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -57,5 +56,4 @@ model__api_subscriptions_get_monthly_cost_php_get_200_response.go
 model__api_subscriptions_get_subscriptions_php_get_200_response.go
 model__api_subscriptions_get_subscriptions_php_get_200_response_subscriptions_inner.go
 response.go
-test/api_default_test.go
 utils.go
