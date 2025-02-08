@@ -15,7 +15,7 @@ paths:
       parameters:
       - description: API key of the user.
         in: query
-        name: apiKey
+        name: api_key
         required: true
         schema:
           type: string
@@ -39,7 +39,7 @@ paths:
       parameters:
       - description: API key of the user.
         in: query
-        name: apiKey
+        name: api_key
         required: true
         schema:
           type: string
@@ -63,7 +63,7 @@ paths:
       parameters:
       - description: API key of the user.
         in: query
-        name: apiKey
+        name: api_key
         required: true
         schema:
           type: string
@@ -110,7 +110,7 @@ paths:
       description: Retrieve the household members.
       parameters:
       - in: query
-        name: apiKey
+        name: api_key
         required: true
         schema:
           type: string
@@ -180,7 +180,7 @@ paths:
       parameters:
       - description: The API key of the user.
         in: query
-        name: apiKey
+        name: api_key
         required: true
         schema:
           type: string
@@ -210,7 +210,7 @@ paths:
       parameters:
       - description: The API key of the user.
         in: query
-        name: apiKey
+        name: api_key
         required: true
         schema:
           type: string

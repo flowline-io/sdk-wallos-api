@@ -2,7 +2,7 @@ get:
   summary: "Get Monthly Cost"
   description: "Retrieve the total cost of subscriptions for a specific month and year."
   parameters:
-    - name: apiKey
+    - name: api_key
       in: query
       required: true
       description: "The API key of the user."

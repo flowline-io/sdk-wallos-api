@@ -3,7 +3,7 @@ get:
   description: 'Retrieve a list of currencies and the main currency of the user.'
   parameters:
     - in: query
-      name: apiKey
+      name: api_key
       required: true
       schema:
         type: string

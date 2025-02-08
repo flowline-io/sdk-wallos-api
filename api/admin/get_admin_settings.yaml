@@ -3,7 +3,7 @@ get:
   description: 'Retrieve admin settings from the Wallos application.'
   parameters:
     - in: query
-      name: apiKey
+      name: api_key
       required: true
       schema:
         type: string

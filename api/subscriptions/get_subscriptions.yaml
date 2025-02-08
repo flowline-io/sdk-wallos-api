@@ -2,7 +2,7 @@ get:
   summary: "Get Subscriptions"
   description: "Retrieve a list of subscriptions with optional filters."
   parameters:
-    - name: apiKey
+    - name: api_key
       in: query
       required: true
       description: "The API key of the user."
